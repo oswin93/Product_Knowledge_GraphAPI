@@ -27,6 +27,7 @@ def get_product_sku(product_id):
             sku_id = sku.get("skuId", "N/A")
             shade = next(iter(sku["attributes"].values()), "N/A")
             offer_price = sku.get("offerPrice", "N/A")
+            title="N/A"
             if "attributeValues" in product_data and product_data["attributeValues"]:
                 for attribute in product_data["attributeValues"]:
                     if attribute.get("id") == shade:  # Matching on a unique attribute with shade
